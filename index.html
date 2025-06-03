@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>功伕海牛</title>
+
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="libraries/p5.min.js"></script>
+    <script src="libraries/p5.sound.min.js"></script>
+  </head>
+
+  <body>
+    <div id="welcomeScreen" class="welcome-screen">
+        <div class="welcome-content">
+            <h1 class="author-name">413730887許婕芸</h1>
+            <h2 class="project-title">期中作業</h2>
+            <button id="enterButton" class="enter-button">歡迎光臨</button>
+        </div>
+    </div>
+
+    <div id="mainContent" class="main-content hidden">
+        <div class="container">
+            <button id="backButton" class="back-button">返回</button>
+            
+            <div id="mainMenu" class="menu-container">
+                <button class="pudding-button" data-space="space1">猜拳的過去</button>
+                <button class="pudding-button" data-space="space2">技巧分享</button>
+                <button class="pudding-button" id="startGame">開始遊戲</button>
+            </div>
+
+            <div id="space1" class="space hidden">
+                <div class="history-content">
+                    <h2>剪刀石頭布的歷史與文化</h2>
+                    
+                    <section class="history-section">
+                        <h3>一、起源與歷史演變</h3>
+                        <p>剪刀石頭布的歷史可追溯到公元前中國漢朝時期，當時稱為「手勢令」。根據《五雜俎》和《古今事物考》等文獻記載，它是一種民間博戲，用於決定順序或裁定小型爭端。</p>
+                        <p>到了14世紀，此遊戲經由文化交流傳入日本，改稱為「じゃんけん（Janken）」。日本版將手勢簡化為今天常見的三種樣式：石頭、剪刀與布，並廣泛融入社交互動中。20世紀初，隨著日式文化擴散與西方對亞洲風俗的興趣，剪刀石頭布傳入歐美地區，逐步成為一項國際性的非正式決策工具。</p>
+                    </section>
+
+                    <section class="history-section">
+                        <h3>二、文化意涵與象徵</h3>
+                        <p>剪刀石頭布不僅是遊戲，也承載了許多文化象徵：</p>
+                        <ul>
+                            <li>對等與公平：遊戲中雙方同時出手，無需裁判，象徵對等與機會平等。</li>
+                            <li>循環制衡（非線性勝負關係）：三種手勢相互克制，代表權力平衡與戰略輪替，與某些政治、經濟模型有相似概念。</li>
+                            <li>決策工具：在許多文化中，剪刀石頭布常被用來處理「無法判斷誰先誰後」的小事，如選擇座位、誰先講話等，被視為一種「命運交由天決」的社會習慣。</li>
+                        </ul>
+                    </section>
+
+                    <section class="history-section">
+                        <h3>三、心理學與行為模式</h3>
+                        <p>雖然遊戲看似隨機，但研究顯示人類在進行剪刀石頭布時經常展現可預測的心理傾向與模式：</p>
+                        <ul>
+                            <li>初次出拳偏好：根據統計，「石頭」最常成為首次出拳的選項。</li>
+                            <li>輸後傾向改變：多數人在輸掉一輪後會更傾向於改變手勢，而非重複。</li>
+                            <li>勝後重複偏好：有些人會因成功而維持原手勢，這種「勝者自信」的行為被稱為「勝者效應」。</li>
+                            <li>反制與預測：高手之間常會進行「預測對手預測我」的多層思維博弈。</li>
+                        </ul>
+                    </section>
+
+                    <section class="history-section">
+                        <h3>四、國際競賽與職業化</h3>
+                        <p>雖然看似遊戲，但世界上實際存在「剪刀石頭布協會」（World Rock Paper Scissors Society）與正式競賽：</p>
+                        <ul>
+                            <li>世界剪刀石頭布錦標賽（WRPS Championship）：曾於加拿大、英國、美國等地舉辦，吸引數百名選手參與，獎金高達數千美元。</li>
+                            <li>比賽流程：採「三戰兩勝」或「五戰三勝」制，甚至有評審團觀察手勢是否符合規範。</li>
+                            <li>訓練技巧：選手會練習心理暗示、假動作、手勢偽裝等進階戰術。</li>
+                        </ul>
+                    </section>
+
+                    <section class="history-section">
+                        <h3>五、數學模型與AI應用</h3>
+                        <p>剪刀石頭布也被數學家與人工智慧研究者視為理想的研究對象：</p>
+                        <ul>
+                            <li>賽局理論（Game Theory）：屬於零和博弈的典型範例，可用來模擬多方對抗的行為模式與均衡策略。</li>
+                            <li>馬可夫鏈分析：用來預測玩家下一步可能的出拳傾向，進而建立反制模型。</li>
+                            <li>AI 模擬訓練：許多AI遊戲研究者以剪刀石頭布為訓練樣本，用來發展「反應預測」與「非對稱博弈策略」模型。</li>
+                            <li>應用情境：如自駕車決策模型、行銷策略模擬、網路安全對抗訓練等。</li>
+                        </ul>
+                    </section>
+
+                    <section class="history-section">
+                        <h3>六、教育與創意應用</h3>
+                        <p>剪刀石頭布常被教師與遊戲設計者納入教學與創作：</p>
+                        <ul>
+                            <li>教學活動：引導學生思考機率、邏輯推理、甚至文化背景。</li>
+                            <li>動態課堂破冰：作為第一堂課或團隊活動的熱身遊戲，促進互動。</li>
+                            <li>遊戲延伸設計：如「剪刀石頭布怪獸版」、「懲罰版」、「進階五拳版」等，加入創意與學習元素。</li>
+                            <li>手勢偵測遊戲：結合攝影機與AI模型（如ml5.js、MediaPipe），開發以「手勢識別」為基礎的互動式遊戲。</li>
+                        </ul>
+                    </section>
+                </div>
+            </div>
+
+            <div id="space2" class="space hidden">
+                <div class="tips-content">
+                    <h2>✊✌️✋《剪刀石頭布》遊戲規則 & 小技巧</h2>
+                    
+                    <section class="tips-section">
+                        <h3>🧾 遊戲規則</h3>
+                        <p class="welcome-text">🎉 歡迎來到全宇宙最公平、最刺激、最心理戰的對決 —— 剪刀石頭布！</p>
+                        
+                        <div class="rules-container">
+                            <p class="highlight">🌟【玩法超簡單】三種手勢選一個，一起倒數後出拳，看誰贏！</p>
+                            
+                            <div class="gesture-rules">
+                                <div class="gesture-item">
+                                    <span class="gesture">✊</span>
+                                    <p>石頭：重拳出擊，砸碎剪刀！</p>
+                                </div>
+                                <div class="gesture-item">
+                                    <span class="gesture">✌️</span>
+                                    <p>剪刀：剪刀咔嚓，剪爛布！</p>
+                                </div>
+                                <div class="gesture-item">
+                                    <span class="gesture">✋</span>
+                                    <p>布：布布包住石頭，讓你動彈不得！</p>
+                                </div>
+                            </div>
+
+                            <div class="play-suggestions">
+                                <h4>🕒 【玩法建議】</h4>
+                                <ul>
+                                    <li>1對1對決：來個3戰2勝，看誰是猜拳王！</li>
+                                    <li>團體PK：輸的留下、贏的晉級，決戰最後一拳！</li>
+                                </ul>
+                                <p class="shout">📣 一起喊：「剪～刀～石～頭～布！」出拳啦！</p>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="tips-section">
+                        <h3>🎯 小技巧！讓你贏得更帥氣！</h3>
+                        
+                        <div class="tip-item">
+                            <h4>🧠 1. 石頭出拳魔咒</h4>
+                            <p>初學者第一拳最常出「石頭」！</p>
+                            <p class="tip-highlight">🎯 小撇步：你出「布」可能比較穩！</p>
+                        </div>
+
+                        <div class="tip-item">
+                            <h4>👀 2. 觀察型玩家大獲全勝！</h4>
+                            <p>看對手剛剛出什麼？</p>
+                            <p>贏的人常常會重複同一招，輸的人愛亂變！</p>
+                        </div>
+
+                        <div class="tip-item">
+                            <h4>🌀 3. 心理戰操作王</h4>
+                            <p>假裝手快出石頭，其實改成剪刀，迷惑對手～</p>
+                            <p class="tip-highlight">🎭 偽裝 + 預測 = 傳說中的「剪拳幻影流」！</p>
+                        </div>
+
+                        <div class="tip-item">
+                            <h4>📊 4. 統計大師出場！</h4>
+                            <p>根據統計：</p>
+                            <p>最常出的手勢：石頭 > 布 > 剪刀</p>
+                            <p class="tip-highlight">🎯 所以出「布」比出「剪刀」更容易贏！</p>
+                        </div>
+
+                        <div class="tip-item">
+                            <h4>🧙‍♂️ 5. 組合技連打流！</h4>
+                            <p>出拳順序連續出三次不同手勢 → 對手會被節奏帶走！</p>
+                            <p class="tip-highlight">🎮 例如：「✋✊✌️」三連 → 對手可能跟著亂出！</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
